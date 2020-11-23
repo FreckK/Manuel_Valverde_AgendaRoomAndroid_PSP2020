@@ -112,6 +112,16 @@ public class AddActivity extends AppCompatActivity {
                         return;
                     }
                 }
+                regexp = "\\d{9}";
+                if (!Pattern.matches(regexp, etTelf.getText().toString())){
+                    if (etTelf.getText().toString().equalsIgnoreCase("")){
+                        Toast.makeText(getApplicationContext(), "INTRODUCE EL NUMERO DE TELEFONO", Toast.LENGTH_LONG).show();
+                        return;
+                    }else{
+                        Toast.makeText(getApplicationContext(), "NUMERO TELEFONICO ERRONEO", Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                }
                 nombre = etNombre.getText().toString();
                 apellidos = etApellidos.getText().toString();
                 telefono = Integer.parseInt(etTelf.getText().toString());
